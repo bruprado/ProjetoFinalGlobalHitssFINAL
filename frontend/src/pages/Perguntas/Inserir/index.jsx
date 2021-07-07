@@ -97,13 +97,12 @@ export default function InserirPergunta(props) {
                             className='form-control'
                             placeholder="tipo"
                             required
-                            onChange={handleInputChange}
-                            
-                        >
+                            onChange={handleInputChange}>
+                                
                             <option value="" selected disabled>Selecionar</option>
                             <option value="texto">Texto</option>
                             <option value="radio">Alternativas</option>
-                            <option value="bolean">Sim ou Não</option>
+                            <option value="boolean">Sim ou Não</option>
                         </select>    
                         
                     
