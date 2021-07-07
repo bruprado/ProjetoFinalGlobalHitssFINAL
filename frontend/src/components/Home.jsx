@@ -49,7 +49,7 @@ function Home() {
   //  })
 
   return (
-    <div className="App">
+    <div className="App" id="home">
       {(user.username !== "") ? (
         <div className="home">
           <div className="welcome">
