@@ -17,3 +17,4 @@ pra funcionar tem que estar rodando um prompt com o "node index.jx" (dentro da p
 Marta:
 yarn add react-lottie no prompt do front
 yarn add react-loading
+yarn add react-icons
