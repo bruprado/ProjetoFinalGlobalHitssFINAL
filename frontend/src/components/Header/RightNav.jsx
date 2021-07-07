@@ -85,7 +85,7 @@ const RightNav = ({ open }) => {
         <li><Link to="/perguntas" ><AiOutlineQuestionCircle /> Perguntas</Link></li>
         {/*<li><Link to="/respostas" ><BsPencil /> Respostas</Link></li>*/}
         
-        <button className="btnSair"><Link><MdExitToApp /> S A I R </Link></button>
+        <button className="btnSair" onClick={() => window.location.href = '/' }> S A I R </button>
     
     </Ul>
     </>
