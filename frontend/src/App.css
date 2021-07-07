@@ -1,0 +1,13 @@
+.App{
+    display:flex;
+    height: 100%;
+}
+
+.Table{
+    margin-top:5%;
+    width: 80%;
+    float:right;
+    margin-left:18%;
+    height: 100%;
+}
+

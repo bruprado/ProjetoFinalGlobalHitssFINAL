@@ -1,0 +1,30 @@
+.dashTres{
+    width: 32%;
+    background-color: rgb(255, 255, 255);
+}
+
+.dashDois{
+    width: 49%;
+    background-color: rgb(255, 255, 255);
+}
+
+.dashTres{
+    text-decoration: none;
+    color: black;
+}
+
+.dashTres:hover{
+    background-color: rgb(241, 235, 214);
+    color: teal;
+    width: 34%;
+    transition: all 0.4s ease-in;
+}
+
+.dashLinha{
+    background-color: rgb(255, 255, 255);
+}
+
+.dashLinha h5{
+    color: teal;
+    text-align: center;
+}
