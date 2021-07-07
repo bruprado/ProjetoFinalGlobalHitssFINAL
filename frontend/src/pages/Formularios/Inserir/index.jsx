@@ -78,14 +78,18 @@ export default function InserirFormulario(props) {
                     </div>
                     <div className="form-group">
                         <label>Tipo</label>
-                        <input
+                        <select className="form-check-input"
                             type='text'
                             name='tipo'
                             className='form-control'
                             placeholder="tipo"
                             required
-                            onChange={handleInputChange}
-                        />
+                            onChange={handleInputChange}>
+                            <option value="" selected disabled>Selecionar</option>
+                            <option value="Gestor-Colaborador">Gestor-Colaborador</option>
+                            <option value="Pares">Pares</option>
+                            <option value="Autoavaliação">Autoavaliação</option>
+                        </select>
                     </div>
                     <button type='submit' className="btn btn-success mt-3">
                         Adicionar
