@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineForm } from 'react-icons/ai';
 import { HiOutlineUserGroup } from 'react-icons/hi';
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
-//import { BsPencil } from 'react-icons/bs';
+import { BsPencil } from 'react-icons/bs';
 import { BsPeopleCircle } from 'react-icons/bs';
 import { MdExitToApp } from 'react-icons/md';
 import { AiOutlineHome } from 'react-icons/ai';
@@ -17,9 +17,13 @@ const Ul = styled.ul`
   flex-flow: row nowrap;
   text-decoration: none;
   li {
-    margin: 15px;
+    margin: 10px;
     text-decoration: none;
-    a{
+    display: block;
+      padding: 0.3em;
+    
+      a{
+        margin: 0;
         color: #f1f1f1;
         padding: 10px;
         text-decoration: none;
@@ -41,18 +45,28 @@ const Ul = styled.ul`
     li {
       color: #fff;
       text-decoration: none;
-      
+      border-radius: 7px;
+      display: block;
+      padding: 0.3em;
     }
   }
+  li:hover { 
+    background-color: #37323E;
+    border-radius: 7px;
+        transition: all 0.7s ease-in;
+     display: block; 
+    padding: 0.3em;
+    }
+    
   .btnSair{
-    margin: 170px 10px 10px 10px;
+    margin: 140px 10px 10px 10px;
     width: 15vh;
-    background-color:#007881;
+    background-color:white;
     border-radius: 20px;
     border: 1px solid #eee;
     a{
       text-decoration: none;
-       color:#eee;
+       color:#37323E;
     }
   }
 
@@ -78,7 +92,7 @@ const RightNav = ({ open }) => {
     <>
    
     <Ul open={open}>
-    <li><Link to="/admin" ><AiOutlineHome /> Home</Link></li>
+        <li><Link to="/admin" ><AiOutlineHome /> Home</Link></li>
         <li><Link to="/times"><HiOutlineUserGroup /> Times </Link></li>
         <li><Link to="/usuarios"><BsPeopleCircle /> Usuários</Link></li>
         <li><Link to="/formularios" ><AiOutlineForm /> Formulários</Link></li>

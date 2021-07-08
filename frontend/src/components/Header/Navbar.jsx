@@ -5,10 +5,12 @@ import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 
 const Nav = styled.nav`
-  background-color: #007881;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,120,129,1) 35%, rgba(222,184,65,1) 100%);
   height: 100vh;
   width: 220px;
   position: fixed;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
   border-bottom: 2px solid #f1f1f1;
   padding: 10px;
   text-decoration: none;
