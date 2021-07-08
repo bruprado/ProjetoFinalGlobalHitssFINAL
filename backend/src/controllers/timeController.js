@@ -18,8 +18,7 @@ exports.Insert = (req, res, next) => {
         (time) => {
             if (time) {
                 res.status(status.OK).send(time);
-            }
-            else {
+            } else {
                 res.status(status.NOT_FOUND).send();
             }
         }
@@ -44,6 +43,15 @@ exports.SearchAll = (req, res, next) => {
                 error = next(error)
             }
         )
+}
+
+//campo busca
+exports.Search = async(req, res, next) => {
+    const {
+        q
+    } = req.query;
+    const [response] = await sequelize.query(`SELECT * FROM times WHERE nome LIKE '%${q}%'`)
+    res.status(status.OK).send(response);
 }
 
 exports.SearchOne = (req, res, next) => {
@@ -101,9 +109,8 @@ exports.Update = (req, res, next) => {
             time => {
                 if (time) {
                     time.update({
-                        nome: nome,
-                    }, { where: { id: id } }
-                    )
+                            nome: nome,
+                        }, { where: { id: id } })
                         .then(
                             (time) => {
                                 if (time) {
@@ -127,13 +134,12 @@ exports.Update = (req, res, next) => {
 
 // chave estrangeira - mostra todos os times e seus usuarios
 exports.SearchAllUsersTimes = (req, res, next) => {
-    Times.findAll({include: [{ model: Usuario, as: "users" }]})
+    Times.findAll({ include: [{ model: Usuario, as: "users" }] })
         .then(time => {
-                if (time) {
-                    res.status(status.OK).send(time);
-                }
+            if (time) {
+                res.status(status.OK).send(time);
             }
-        ).catch(
+        }).catch(
             () => {
                 error = next(error)
             }
@@ -144,12 +150,12 @@ exports.SearchAllUsersTimes = (req, res, next) => {
 exports.SearchOneUsersTimes = (req, res, next) => {
     const id = req.params.id;
 
-    Times.findByPk(id, {include: [{ model: Usuario, as: "users" }]})
+    Times.findByPk(id, { include: [{ model: Usuario, as: "users" }] })
         .then(
             (time) => {
                 if (time) {
                     res.status(status.OK).send(time);
-                }else{
+                } else {
                     res.status(status.NOT_FOUND).send();
                 }
             }
@@ -162,13 +168,12 @@ exports.SearchOneUsersTimes = (req, res, next) => {
 
 // chave estrangeira - mostra todos os times e seus formularios
 exports.SearchAllFormsTimes = (req, res, next) => {
-    Times.findAll({include: ['forms']})
+    Times.findAll({ include: ['forms'] })
         .then(time => {
-                if (time) {
-                    res.status(status.OK).send(time);
-                }
+            if (time) {
+                res.status(status.OK).send(time);
             }
-        ).catch(
+        }).catch(
             () => {
                 error = next(error)
             }
@@ -179,12 +184,12 @@ exports.SearchAllFormsTimes = (req, res, next) => {
 exports.SearchOneFormsTimes = (req, res, next) => {
     const id = req.params.id;
 
-    Times.findByPk(id, {include: ['forms']})
+    Times.findByPk(id, { include: ['forms'] })
         .then(
             (time) => {
                 if (time) {
                     res.status(status.OK).send(time);
-                }else{
+                } else {
                     res.status(status.NOT_FOUND).send();
                 }
             }
@@ -198,13 +203,12 @@ exports.SearchOneFormsTimes = (req, res, next) => {
 
 // chave estrangeira - mostra todos os times e suas metas
 exports.SearchAllMetasTimes = (req, res, next) => {
-    Times.findAll({include: [{ model: Metas, as: "metas" }]})
+    Times.findAll({ include: [{ model: Metas, as: "metas" }] })
         .then(time => {
-                if (time) {
-                    res.status(status.OK).send(time);
-                }
+            if (time) {
+                res.status(status.OK).send(time);
             }
-        ).catch(
+        }).catch(
             () => {
                 error = next(error)
             }
@@ -215,12 +219,12 @@ exports.SearchAllMetasTimes = (req, res, next) => {
 exports.SearchOneMetasTimes = (req, res, next) => {
     const id = req.params.id;
 
-    Times.findByPk(id, {include: [{ model: Metas, as: "metas" }]})
+    Times.findByPk(id, { include: [{ model: Metas, as: "metas" }] })
         .then(
             (time) => {
                 if (time) {
                     res.status(status.OK).send(time);
-                }else{
+                } else {
                     res.status(status.NOT_FOUND).send();
                 }
             }
@@ -231,12 +235,12 @@ exports.SearchOneMetasTimes = (req, res, next) => {
         )
 }
 
-exports.ContagemTimes = async (req, res, next) => {
+exports.ContagemTimes = async(req, res, next) => {
     try {
         const [response] = await sequelize.query('SELECT count(id) AS count FROM `times`')
         res.status(status.OK).send(response[0]);
     } catch (error) {
         next(error)
     }
-    
+
 }

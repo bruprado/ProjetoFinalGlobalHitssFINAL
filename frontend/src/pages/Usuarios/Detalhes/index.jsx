@@ -24,7 +24,7 @@ export default function DetalhesUsuario(props){
     const {usuario} = state;
     return(
         <>
-            <h3>Detalhes Usuário</h3>
+            <h3>Detalhes do Usuário</h3>
  
             <table className="table table-striped">
                 <thead>

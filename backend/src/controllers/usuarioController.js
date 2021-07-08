@@ -1,21 +1,18 @@
 //chama o Usuarios de dentro de models
 const Usuarios = require('../models/usuarios');
 const status = require('http-status');
-const sequelize = require('../database/database')
+const sequelize = require('../database/database');
+//const { default: BuscarUsuarios } = require('../../../frontend/src/pages/Usuarios/Main');
 
-//comando para realizar inserção dos dados através de requisição
 exports.Insert = (req, res, next) => {
-    //criando variaveis de reconhecimento da requisiçao, de acordo com o que tem no model
-    //lembrando que id é auto incrementavel, nao precisa chama-lo
     const nome = req.body.nome;
     const login = req.body.login;
     const senha = req.body.senha;
     const tipo = req.body.tipo;
     const idTime = req.body.idTime;
 
-    //Sequelize ira enviar os dados atraves do comando create. create é para inserir
     Usuarios.create({
-        nome: nome, //nome da chave : constante criada acima
+        nome: nome,
         login: login,
         senha: senha,
         tipo: tipo,
@@ -51,8 +48,8 @@ exports.SearchAll = (req, res, next) => {
         )
 }
 
+//campo busca
 exports.Search = async(req, res, next) => {
-    console.log("aqui")
     const {
         q
     } = req.query;
