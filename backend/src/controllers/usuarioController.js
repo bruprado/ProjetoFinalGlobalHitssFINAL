@@ -24,8 +24,7 @@ exports.Insert = (req, res, next) => {
         (usuario) => {
             if (usuario) {
                 res.status(status.OK).send(usuario);
-            }
-            else {
+            } else {
                 res.status(status.NOT_FOUND).send();
             }
         }
@@ -50,6 +49,15 @@ exports.SearchAll = (req, res, next) => {
                 error = next(error)
             }
         )
+}
+
+exports.Search = async(req, res, next) => {
+    console.log("aqui")
+    const {
+        q
+    } = req.query;
+    const [response] = await sequelize.query(`SELECT * FROM usuarios WHERE nome LIKE '%${q}%' OR login LIKE '%${q}%'`)
+    res.status(status.OK).send(response);
 }
 
 exports.SearchOne = (req, res, next) => {
@@ -111,13 +119,12 @@ exports.Update = (req, res, next) => {
             usuario => {
                 if (usuario) {
                     usuario.update({
-                        nome: nome,
-                        login: login,
-                        senha: senha,
-                        tipo: tipo,
-                        idTime: idTime
-                    }, { where: { id: id } }
-                    )
+                            nome: nome,
+                            login: login,
+                            senha: senha,
+                            tipo: tipo,
+                            idTime: idTime
+                        }, { where: { id: id } })
                         .then(
                             (usuario) => {
                                 if (usuario) {
@@ -146,8 +153,7 @@ exports.SearchAllRespsAvaliador = (req, res, next) => {
             if (usuario) {
                 res.status(status.OK).send(usuario);
             }
-        }
-        ).catch(
+        }).catch(
             () => {
                 error = next(error)
             }
@@ -181,8 +187,7 @@ exports.SearchAllRespsAvaliado = (req, res, next) => {
             if (usuario) {
                 res.status(status.OK).send(usuario);
             }
-        }
-        ).catch(
+        }).catch(
             () => {
                 error = next(error)
             }
@@ -209,22 +214,20 @@ exports.SearchOneRespsAvaliado = (req, res, next) => {
         )
 }
 
-exports.ContagemUsuarios = async (req, res, next) => {
+exports.ContagemUsuarios = async(req, res, next) => {
     try {
-        const [response] = await sequelize.query('SELECT count(id) AS count FROM `usuarios`')
+        const [response] = await sequelize.query('SELECT count(id) AS count FROM usuarios')
         res.status(status.OK).send(response[0]);
     } catch (error) {
         next(error)
-    }    
+    }
 }
 
-exports.Recentes = async (req, res, next) => {
+exports.Recentes = async(req, res, next) => {
     try {
-        const [response] = await sequelize.query('SELECT * FROM `usuarios` order by `id` desc LIMIT 5')
-        console.log(response)
+        const [response] = await sequelize.query('SELECT * FROM  usuarios order by  id desc LIMIT 5 ')
         res.status(status.OK).send(response);
     } catch (error) {
         next(error)
-    }   
+    }
 }
-
