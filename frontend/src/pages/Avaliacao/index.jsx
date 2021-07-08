@@ -28,7 +28,7 @@ export default function Avaliacao(props) {
     
     return (
         <>
-            <h3>Perguntas do Formulário {formularios.tipo}</h3>
+            <h3 className="mb-4">Perguntas do Formulário {formularios.tipo}</h3>
             {/* <Link to={`/inserirFormulario/${time.id}`}>Adicionar</Link> */}
             {/* <Link to="/formularios" className="btn btn-success mt-3">Voltar</Link> */}
 

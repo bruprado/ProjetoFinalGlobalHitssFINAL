@@ -38,17 +38,18 @@ export default function Bucar(props) {
     const { usuarios } = state;
     return (
         <>
-            <h3>Usuários</h3>
+        <div className="input-area mb-4 w-100 justify-content-end d-flex">
 
-            <div className=" input-area">
                 <input 
                 type="text" 
                 className="" 
-                placeholder="buscar..." 
+                placeholder="Buscar usuário..." 
                 value={input} 
                 onChange={(event) => setInput(event.target.value)}
                 onKeyUp={onChangeInputDebounce}/>
-            </div>
+        </div>
+
+            <h3>Usuários</h3>
 
             <table className="table table-striped">
                 <thead>

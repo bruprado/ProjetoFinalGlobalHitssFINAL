@@ -24,7 +24,7 @@ export default function MainFormularios (props) {
         <>
             <h3>Formulários por Time</h3>
             
-
+            <div className="row mt-3 p-3 justify-content-between rounded shadow">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -49,7 +49,8 @@ export default function MainFormularios (props) {
 
                 </tbody>
             </table>
-            <p><Link>Voltar</Link></p>
+            </div>
+            <p className="mt-3"><Link>Voltar</Link></p>
         </>
     )
 };

@@ -16,7 +16,7 @@ export default function InserirUsuario(props) {
 
     useEffect(
         () => {
-            const { id } = props.match.params;
+            const{id} = props.match.params;
             setState({
                 usuario: {
                     nome: '',
@@ -26,7 +26,7 @@ export default function InserirUsuario(props) {
                     idTime: id
                 }
             });
-        }, [props.match.params]
+        },[props.match.params]
     )
 
     const handleInputChange = (e) => {
@@ -103,47 +103,43 @@ export default function InserirUsuario(props) {
                             onChange={handleInputChange}
                         />
                     </div>
+                  
+                        <div className="form-group">
+                            <label>Tipo:</label>
+                            <input
+                                type='text'
+                                name='tipo'
+                                className='form-control'
+                                placeholder="tipo"
+                                required
+                                onChange={handleInputChange}
+                            />
+                      
+                        <div className="form-group form-hidden">
+                            <label >idtime</label>
+                            <input
+                                type='text'
+                                name='idTime'
+                                className='form-control'
+                                placeholder="idTime"
+                                required
+                                onChange={handleInputChange}
+                                value={state.usuario.idTime}
+                            />
 
-                    <div className="form-group">
-                        <label>Tipo:</label>
-                        <select className="form-check-input"
-                            type='text'
-                            name='tipo'
-                            className='form-control'
-                            placeholder="tipo"
-                            required
-                            onChange={handleInputChange}>
-
-                            <option value="" selected disabled>Selecionar</option>
-                            <option value="Administrador">Administrador</option>
-                            <option value="Gestor">Gestor</option>
-                            <option value="Colaborador">Colaborador</option>
-                        </select>
-                    </div>
-
-                    <div className="form-group form-hidden">
-                        <label >idtime</label>
-                        <input
-                            type='text'
-                            name='idTime'
-                            className='form-control'
-                            placeholder="idTime"
-                            required
-                            onChange={handleInputChange}
-                            value={state.usuario.idTime}
-                        />
-                    </div>
-                    <button type='submit' className="btn btn-success mt-3 mb-3">
+                            
+                        </div>
+                        <button type='submit' className="btn btn-success mt-3 mb-3">
                         Adicionar
                     </button>
                     <p><Link to='/usuarios'>Voltar</Link> </p>
+                    </div>
                     
 
-
-
+                    
                 </form>
-
-            </div >
+                
+            </div>
         )
 
     }

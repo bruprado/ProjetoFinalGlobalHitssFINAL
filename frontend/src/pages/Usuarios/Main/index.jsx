@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
 
-export default function BuscarUsuarios(props) {
+export default function MainUsuarios(props) {
     const [state, setState] = useState({
         usuarios: []
     });
@@ -21,11 +21,10 @@ export default function BuscarUsuarios(props) {
     )
 
     const { usuarios } = state;
-
     return (
         <>
             <h3>Usuários</h3>
-
+            <div className="row mt-3 p-3 justify-content-between rounded shadow">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -50,14 +49,15 @@ export default function BuscarUsuarios(props) {
                                     <td><Link to={`/detalhesTime/${usuario.idTime}`}>Ver</Link></td>
                                     <td>{moment(usuario.createdAt).format('DD/MM/YYYY')}</td>
                                     <td><Link to={`/detalhesUsuario/${usuario.id}`}>Detalhes</Link></td>
-
+                                    
                                 </tr>
                             )
                         )
                     }
                 </tbody>
             </table>
-            <p><Link to='/usuarios'>Voltar</Link></p>
+            </div>
+            <p className="mt-3"><Link to='/usuarios'>Voltar</Link></p>
         </>
     )
 };

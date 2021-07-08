@@ -25,7 +25,7 @@ export default function DetalhesTime(props) {
     return (
         <>
             <h3>Detalhes do Time</h3>
-
+            <div className="row mt-5 p-3 justify-content-between rounded shadow">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -53,7 +53,8 @@ export default function DetalhesTime(props) {
 
                 </tbody>
             </table>
-            <p><Link to='/times'>Voltar</Link></p>
+            </div>
+            <p className="mt-3"><Link to='/times'>Voltar</Link></p>
         </>
     )
 }

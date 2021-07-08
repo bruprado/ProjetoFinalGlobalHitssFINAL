@@ -24,7 +24,7 @@ export default function MainPerguntas (props) {
     return (
         <>
             <h3>Perguntas</h3>
-            {/*<Link to={'/inserirPergunta'}>Adicionar</Link>*/}
+            <div className="row mt-3 p-3 justify-content-between rounded shadow">
 
             <table className="table table-striped">
                 <thead>
@@ -59,7 +59,8 @@ export default function MainPerguntas (props) {
 
                 </tbody>
             </table>
-            <p><Link>Voltar</Link></p>
+            </div>
+            <p className="mt-3"><Link>Voltar</Link></p>
         </>
     )
 };

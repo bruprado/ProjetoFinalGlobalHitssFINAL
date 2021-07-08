@@ -1,7 +1,7 @@
-// import React from "react";
-// import { AreaChart, Area, ResponsiveContainer, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
-// import { useState, useEffect } from 'react';
-// import axios from 'axios';
+import React from "react";
+import { AreaChart, Area, ResponsiveContainer, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Exemplo2(props) {
 
