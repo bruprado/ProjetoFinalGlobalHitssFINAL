@@ -25,7 +25,7 @@ export default function DetalhesPergunta(props) {
     return (
         <>
             <h3>Detalhes da Pergunta</h3>
-
+            <div className="row mt-5 p-3 justify-content-between rounded shadow">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -55,7 +55,8 @@ export default function DetalhesPergunta(props) {
 
                 </tbody>
             </table>
-            <button className="btnback"><Link to='/perguntas'>Voltar</Link></button>
+            </div>
+            <button className="btnback mt-3"><Link to='/perguntas'>Voltar</Link></button>
         </>
     )
 }

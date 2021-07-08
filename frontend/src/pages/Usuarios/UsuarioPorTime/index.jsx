@@ -30,7 +30,7 @@ export default function UsuariosPorTime(props) {
             <h3>Usuarios de {time.nome}</h3>
             <Link to={`/inserirUsuario/${time.id}`}>Adicionar</Link>
            
-
+            <div className="row mt-5 p-3 justify-content-between rounded shadow">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -65,8 +65,8 @@ export default function UsuariosPorTime(props) {
                     }
                 </tbody>
             </table>
-
-            <p><Link to={`/detalhesTime/${usuarios.id}`}>Voltar</Link></p>
+            </div>
+            <p className="mt-3"><Link to={`/detalhesTime/${usuarios.id}`}>Voltar</Link></p>
           
         </>
     )

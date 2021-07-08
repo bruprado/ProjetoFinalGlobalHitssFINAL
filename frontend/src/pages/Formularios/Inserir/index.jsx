@@ -61,7 +61,7 @@ export default function InserirFormulario(props) {
         return <Redirect to={`/formulariosTime/${state.formulario.idTime}`} />
     } else {
         return (
-            <div className="form">
+            <div className="form-group">
                 <h3>Adicionar Formulário</h3>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group form-hidden">
@@ -76,7 +76,7 @@ export default function InserirFormulario(props) {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="form-group">
+                    
                         <label>Tipo</label>
                         <select className="form-check-input"
                             type='text'
@@ -90,8 +90,8 @@ export default function InserirFormulario(props) {
                             <option value="Pares">Pares</option>
                             <option value="Autoavaliação">Autoavaliação</option>
                         </select>
-                    </div>
-                    <button type='submit' className="btn btn-success mt-3">
+                   
+                    <button type='submit' className="btn mt-3 mb-3">
                         Adicionar
                     </button>
                 </form>

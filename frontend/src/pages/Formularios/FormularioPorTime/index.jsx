@@ -38,16 +38,17 @@ export default function FormulariosPorTime(props) {
                         formularios.map(
                             (formulario, index) => (
                                 <div className="formIndividual m-1 rounded shadow-lg" key={index} >
-                                    <div className=" text-center p-5">
+                                    <div className="text-center p-5">
                                         <div className="text" >
-                                            <p>Formulário para</p>
-                                            <p>{formulario.tipo}</p>
+                                            <h5 className="tipoform"><strong>Formulário para</strong></h5>
+                                            <h5 className="tipoform"><strong>{formulario.tipo}</strong></h5>
                                             <div className="formBotoes">
                                               
-                                                <p><Link to={`/inserirPergunta/${formulario.id}`}>Cadastrar Pergunta</Link></p>
-                                                <p><Link to={`/perguntasFormulario/${formulario.id}`}>Ver Perguntas</Link></p>
-                                                <p><Link to={`/editarFormulario/${formulario.id}`}>Editar</Link></p>
-                                                <p><Link to={`/excluirFormulario/${formulario.id}`}>Excluir</Link></p>
+                                                <p className="liteste mb-3"><Link to={`/inserirPergunta/${formulario.id}`} >Cadastrar Pergunta</Link></p>
+                                                <p className="liteste mb-3"><Link to={`/perguntasFormulario/${formulario.id}`}>Ver Perguntas</Link></p>
+                                                <p className="liteste mb-3"><Link to={`/editarFormulario/${formulario.id}`}>Editar</Link></p>
+                                                <p className="liteste mb-3"><Link to={`/excluirFormulario/${formulario.id}`}>Excluir</Link></p>
+                                              
                                             </div>
                                         </div>
                                     </div>

@@ -25,7 +25,7 @@ export default function DetalhesUsuario(props){
     return(
         <>
             <h3>Detalhes Usuário</h3>
- 
+            <div className="row mt-5 p-3 justify-content-between rounded shadow">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -56,7 +56,8 @@ export default function DetalhesUsuario(props){
                     
                 </tbody>
             </table>
-            <p><Link to='/usuarios'>Voltar</Link></p>
+            </div>
+            <p className="mt-3"><Link to='/usuarios'>Voltar</Link></p>
             </>
     )
 }

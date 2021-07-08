@@ -66,7 +66,7 @@ export default function EditarTime(props){
             <div className="form">
                 <h3>Editar Usuário</h3>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
+                    <div className="form">
                         <label>Nome</label>
                         <input 
                             type='text'
@@ -82,7 +82,8 @@ export default function EditarTime(props){
                         Editar
                     </button>
                 </form>
-                <p><Link to='/times'>Voltar</Link> </p>
+              
+                <p className="mt-3"><Link to='/times'>Voltar</Link> </p>
             </div>
         )
     }  

@@ -29,7 +29,7 @@ export default function MainTimes() {
         <>
             <h3>Times</h3>
             <Link to={'/inserirTime'}>Adicionar</Link>
-
+            <div className="row mt-3 p-3 justify-content-between rounded shadow">
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -57,7 +57,8 @@ export default function MainTimes() {
 
                 </tbody>
             </table>
-            <p><Link>Voltar</Link></p>
+            </div>
+            <p className="mt-3"><Link>Voltar</Link></p>
         </>
     )
 }
