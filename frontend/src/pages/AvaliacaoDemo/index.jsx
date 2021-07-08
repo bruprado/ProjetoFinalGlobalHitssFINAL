@@ -203,9 +203,10 @@ export default function AvaliacaoDemo() {
                    
                 </tbody>
             </table>
-
-            <p><Link to={`/detalhesFormulario/`}>Voltar</Link></p>
-
+            <button type='submit' className="btn btn-success mt-3">
+                       Enviar
+                    </button>
+            <p className="mt-3"><Link to={`/detalhesFormulario/`}>Voltar</Link></p>
         </>
     )
 };
