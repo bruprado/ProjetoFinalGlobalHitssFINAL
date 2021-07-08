@@ -18,10 +18,6 @@ export default function DashboardGestor() {
     const [countTimes, setCountTimes] = useState(0)
 
     
-    
-    
-    
-
     useEffect( () => {
         async function getCountUsers() {
             const {data} = await axios.get('http://localhost:3003/globalhitss/contagemUsuarios')

@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
+import debounce from 'lodash.debounce'
 
-export default function BuscarUsuarios(props) {
+export default function Bucar(props) {
     const [state, setState] = useState({
         usuarios: []
     });
+
+    const [input, setInput] = useState('');
 
     useEffect(
         () => {
@@ -20,11 +23,32 @@ export default function BuscarUsuarios(props) {
         }, []
     )
 
-    const { usuarios } = state;
+    const onChangeInput = useCallback(() => {
+        axios.post(`http://localhost:3003/globalhitss/usuarios/search?q=${input}`)
+                .then(
+                    res => {
+                        const usuarios = res.data;
+                        setState({ usuarios })
+                    }
+                )
+    }, [input])
 
+    const onChangeInputDebounce = debounce(onChangeInput,1500)
+
+    const { usuarios } = state;
     return (
         <>
             <h3>Usuários</h3>
+
+            <div className=" input-area">
+                <input 
+                type="text" 
+                className="" 
+                placeholder="buscar..." 
+                value={input} 
+                onChange={(event) => setInput(event.target.value)}
+                onKeyUp={onChangeInputDebounce}/>
+            </div>
 
             <table className="table table-striped">
                 <thead>
