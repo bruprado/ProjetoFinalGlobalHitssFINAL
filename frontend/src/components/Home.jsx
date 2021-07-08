@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import logo from '../assets/logo.png';
+//import logo from '../assets/logo.png';
 import LoginForm from '../pages/Login'
-import Times from '../pages/Times/Main';
-import Navbar from './Header/Navbar';
-import Content from './Content';
+//import Times from '../pages/Times/Main';
+// import Navbar from './Header/Navbar';
+// import Content from './Content';
 
 function Home() {
 
@@ -44,18 +44,18 @@ function Home() {
    // setUser({username: "", password: ""}); 
    //}
 
-   const [state, setState] = useState({
-     usuarios: []
-   })
+  //  const [state, setState] = useState({
+  //    usuarios: []
+  //  })
 
   return (
-    <div className="App">
+    <div className="App" id="home">
       {(user.username !== "") ? (
         <div className="home">
           <div className="welcome">
               <h4 className="nomeusu text-muted small">Bem-vindo, <span>{user.username}</span></h4>
-              <Navbar />
-              <Content />
+              {/* <Navbar />
+              <Content /> */}
               
            </div>
            </div>

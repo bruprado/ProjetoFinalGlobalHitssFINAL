@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaUserTie } from 'react-icons/fa';
 import { AiOutlineForm } from 'react-icons/ai';
 import { HiOutlineUserGroup } from 'react-icons/hi';
-import { GoGraph } from 'react-icons/go';
+//import { GoGraph } from 'react-icons/go';
 import { BsPeopleCircle } from 'react-icons/bs';
 import './index.css';
 import { useEffect, useState } from 'react';

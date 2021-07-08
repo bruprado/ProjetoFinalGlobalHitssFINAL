@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function InserirPergunta(props) {
     const [state, setState] = useState({
@@ -47,7 +47,7 @@ export default function InserirPergunta(props) {
         }).then(
             data => {
                 if (data) {
-                    alert("Dados inseridos com sucesso")
+                    // alert("Dados inseridos com sucesso")
                     setRedirect(true);
                 }
             }
@@ -60,7 +60,8 @@ export default function InserirPergunta(props) {
     console.log(state)
 
     if (redirect) {
-        return <Redirect to={`/inserirPergunta/${state.pergunta.idFormulario}`}  />
+        return 
+        // <Redirect to={`/inserirPergunta/${state.pergunta.idFormulario}`}  />
     } else {
         return (
             <div className="form-group">
@@ -106,10 +107,13 @@ export default function InserirPergunta(props) {
                         </select>    
                         
                     
-                    <button type='submit' className="btn btn-success mt-3 mb-3">
+                    <button type='submit' className="btn btn-success mt-3 mb-3" onClick={() => window.location.href = `/inserirPergunta/${state.pergunta.idFormulario}`}>
                        Cadastrar outra pergunta
                     </button>
-                    <p><Link to={`/formulariosTime/${state.pergunta.idFormulario}`} >Voltar</Link></p>
+                    <button type='submit' className="btn btn-success mt-3 mb-3" onClick={() => window.location.href = `/formularios`}>
+                       Cadastrar e Finalizar
+                    </button>
+                    <p><Link to={`/formularios`} >Voltar</Link></p>
                     </div>
                 </form>
                 
