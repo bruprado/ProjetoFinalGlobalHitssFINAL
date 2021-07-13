@@ -14,8 +14,6 @@ router.get('/usersTime', timeController.SearchAllUsersTimes);
 router.get('/usersTime/:id', timeController.SearchOneUsersTimes);
 router.get('/formsTime', timeController.SearchAllFormsTimes);
 router.get('/formsTime/:id', timeController.SearchOneFormsTimes);
-router.get('/metasTime', timeController.SearchAllMetasTimes);
-router.get('/metasTime/:id', timeController.SearchOneMetasTimes);
 router.get('/contagemTimes', timeController.ContagemTimes);;
 
 //rotas do usuarioController
@@ -69,13 +67,6 @@ router.put('/deletarResposta/:id', respostaController.Delete);
 router.put('/editarResposta/:id', respostaController.Update);
 
 
-const metaController = require('../controllers/metaController')
-
-router.post('/inserirMeta', metaController.Insert);
-router.get('/metas', metaController.SearchAll);
-router.get('/metas/:id', metaController.SearchOne);
-router.put('/deletarMeta/:id', metaController.Delete);
-router.put('/editarMeta/:id', metaController.Update);
 
 
 module.exports = router

@@ -8,7 +8,6 @@ import PerguntasRoute from '../routes/PerguntasRoutes';
 import RespostasRoute from '../routes/RespostasRoutes';
 import AvaliacaoRoute from '../routes/AvaliacaoRoutes';
 import DashboardRoute from '../routes/DashboardRoutes';
-import MetasRoute from '../routes/MetasRoutes';
 
 function Content(){
     return(
@@ -25,7 +24,6 @@ function Content(){
                 <RespostasRoute/>
                 <AvaliacaoRoute/>
                 <DashboardRoute/>
-                <MetasRoute/>
             </div>  
         </div>
     )

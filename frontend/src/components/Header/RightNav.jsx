@@ -96,7 +96,7 @@ const RightNav = ({ open }) => {
         <li><Link to="/times"><HiOutlineUserGroup /> Times </Link></li>
         <li><Link to="/usuarios"><BsPeopleCircle /> Usuários</Link></li>
         <li><Link to="/formularios" ><AiOutlineForm /> Formulários</Link></li>
-        <li><Link to="/perguntas" ><AiOutlineQuestionCircle /> Perguntas</Link></li>
+        {/* <li><Link to="/perguntas" ><AiOutlineQuestionCircle /> Perguntas</Link></li> */}
         {/*<li><Link to="/respostas" ><BsPencil /> Respostas</Link></li>*/}
         
         <button className="btnSair" onClick={() => window.location.href = '/' }> S A I R </button>

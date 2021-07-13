@@ -12,8 +12,7 @@ function App() {
         {window.location.pathname !== '/' ? <Navbar /> : null}
 
         <div className='Table'>
-          
-              
+             
           <Content />
         </div>
 

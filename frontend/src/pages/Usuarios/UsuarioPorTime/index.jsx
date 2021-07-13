@@ -36,7 +36,7 @@ export default function UsuariosPorTime(props) {
                     <tr>
                         <th>Nome</th>
                         <th>Login</th>
-                        <th>Senha</th>
+                        {/* <th>Senha</th> */}
                         <th>Tipo</th>
                         <th>nome do time</th>
                         <th>Mais Informações</th>
@@ -50,7 +50,7 @@ export default function UsuariosPorTime(props) {
                                     <tr key={index}>
                                         <td>{usuario.nome}</td>
                                         <td>{usuario.login}</td>
-                                        <td>{usuario.senha}</td>
+                                        {/* <td>{usuario.senha}</td> */}
                                         <td>{usuario.tipo}</td>
                                         <td>{time.nome}</td>
                                         <td><Link to={`/detalhesUsuario/${usuario.id}`}>Detalhes</Link></td>

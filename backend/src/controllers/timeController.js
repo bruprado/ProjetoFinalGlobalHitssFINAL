@@ -2,7 +2,6 @@
 const Times = require('../models/times');
 const Usuario = require("../models/usuarios")
 const status = require('http-status');
-const Metas = require('../models/metas');
 const sequelize = require('../database/database')
 
 //comando para realizar inserção dos dados através de requisição
@@ -18,8 +17,7 @@ exports.Insert = (req, res, next) => {
         (time) => {
             if (time) {
                 res.status(status.OK).send(time);
-            }
-            else {
+            } else {
                 res.status(status.NOT_FOUND).send();
             }
         }
@@ -101,9 +99,8 @@ exports.Update = (req, res, next) => {
             time => {
                 if (time) {
                     time.update({
-                        nome: nome,
-                    }, { where: { id: id } }
-                    )
+                            nome: nome,
+                        }, { where: { id: id } })
                         .then(
                             (time) => {
                                 if (time) {
@@ -127,13 +124,12 @@ exports.Update = (req, res, next) => {
 
 // chave estrangeira - mostra todos os times e seus usuarios
 exports.SearchAllUsersTimes = (req, res, next) => {
-    Times.findAll({include: [{ model: Usuario, as: "users" }]})
+    Times.findAll({ include: [{ model: Usuario, as: "users" }] })
         .then(time => {
-                if (time) {
-                    res.status(status.OK).send(time);
-                }
+            if (time) {
+                res.status(status.OK).send(time);
             }
-        ).catch(
+        }).catch(
             () => {
                 error = next(error)
             }
@@ -144,12 +140,12 @@ exports.SearchAllUsersTimes = (req, res, next) => {
 exports.SearchOneUsersTimes = (req, res, next) => {
     const id = req.params.id;
 
-    Times.findByPk(id, {include: [{ model: Usuario, as: "users" }]})
+    Times.findByPk(id, { include: [{ model: Usuario, as: "users" }] })
         .then(
             (time) => {
                 if (time) {
                     res.status(status.OK).send(time);
-                }else{
+                } else {
                     res.status(status.NOT_FOUND).send();
                 }
             }
@@ -162,13 +158,12 @@ exports.SearchOneUsersTimes = (req, res, next) => {
 
 // chave estrangeira - mostra todos os times e seus formularios
 exports.SearchAllFormsTimes = (req, res, next) => {
-    Times.findAll({include: ['forms']})
+    Times.findAll({ include: ['forms'] })
         .then(time => {
-                if (time) {
-                    res.status(status.OK).send(time);
-                }
+            if (time) {
+                res.status(status.OK).send(time);
             }
-        ).catch(
+        }).catch(
             () => {
                 error = next(error)
             }
@@ -179,12 +174,12 @@ exports.SearchAllFormsTimes = (req, res, next) => {
 exports.SearchOneFormsTimes = (req, res, next) => {
     const id = req.params.id;
 
-    Times.findByPk(id, {include: ['forms']})
+    Times.findByPk(id, { include: ['forms'] })
         .then(
             (time) => {
                 if (time) {
                     res.status(status.OK).send(time);
-                }else{
+                } else {
                     res.status(status.NOT_FOUND).send();
                 }
             }
@@ -196,47 +191,13 @@ exports.SearchOneFormsTimes = (req, res, next) => {
 }
 
 
-// chave estrangeira - mostra todos os times e suas metas
-exports.SearchAllMetasTimes = (req, res, next) => {
-    Times.findAll({include: [{ model: Metas, as: "metas" }]})
-        .then(time => {
-                if (time) {
-                    res.status(status.OK).send(time);
-                }
-            }
-        ).catch(
-            () => {
-                error = next(error)
-            }
-        )
-}
 
-// chave estrangeira - mostra todos as metas de um determinado time
-exports.SearchOneMetasTimes = (req, res, next) => {
-    const id = req.params.id;
-
-    Times.findByPk(id, {include: [{ model: Metas, as: "metas" }]})
-        .then(
-            (time) => {
-                if (time) {
-                    res.status(status.OK).send(time);
-                }else{
-                    res.status(status.NOT_FOUND).send();
-                }
-            }
-        ).catch(
-            () => {
-                error = next(error)
-            }
-        )
-}
-
-exports.ContagemTimes = async (req, res, next) => {
+exports.ContagemTimes = async(req, res, next) => {
     try {
         const [response] = await sequelize.query('SELECT count(id) AS count FROM `times`')
         res.status(status.OK).send(response[0]);
     } catch (error) {
         next(error)
     }
-    
+
 }

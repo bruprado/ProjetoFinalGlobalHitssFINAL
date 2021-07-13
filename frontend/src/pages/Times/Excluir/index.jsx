@@ -42,7 +42,7 @@ export default function ExcluirTime(props){
     }else{
         return(
             <>
-                <h3>Deseja excluir o usuário {time.nome} ?</h3> 
+                <h3>Deseja excluir o time {time.nome} ?</h3> 
                 <button className="btn btn-success mt-3" onClick={handleConfirm}>Sim</button>
                 <br></br>
                 <br></br>

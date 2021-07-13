@@ -64,7 +64,7 @@ export default function EditarTime(props){
     }else{
         return(
             <div className="form">
-                <h3>Editar Usuário</h3>
+                <h3>Editar Time</h3>
                 <form onSubmit={handleSubmit}>
                     <div className="form">
                         <label>Nome</label>

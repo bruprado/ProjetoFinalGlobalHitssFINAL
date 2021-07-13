@@ -13,9 +13,9 @@ const Times = sequelize.define('times', {
         type: Sequelize.INTEGER //define o tipo de dado
     },
     nome: {
-        allowNull: false, 
+        allowNull: false,
         type: Sequelize.STRING(255),
-        validate:{
+        validate: {
             len: [3, 255] //define tamanho minimo e maximo do campo
         }
     }
@@ -24,18 +24,19 @@ const Times = sequelize.define('times', {
 //envia a chave estrangeira idTime para o model usuarios
 const usuarios = require('./usuarios');
 Times.hasMany(usuarios, {
-    foreignKey: 'idTime', onDelete: 'CASCADE', onUpdate: 'CASCADE', as: 'users'
+    foreignKey: 'idTime',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    as: 'users'
 })
 
 //envia a chave estrangeira idTime para o model formularios
 const formularios = require('./formularios');
 Times.hasMany(formularios, {
-    foreignKey: 'idTime', onDelete: 'CASCADE', onUpdate: 'CASCADE', as: 'forms'
-})
-
-const metas = require('./metas');
-Times.hasMany(metas, {
-    foreignKey: 'idTime', onDelete: 'CASCADE', onUpdate: 'CASCADE', as: 'metas'
+    foreignKey: 'idTime',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    as: 'forms'
 })
 
 module.exports = Times;

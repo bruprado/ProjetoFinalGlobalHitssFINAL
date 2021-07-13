@@ -6,10 +6,8 @@ export default function FormulariosPorTime(props) {
     const [formularios, setFormularios] = useState([]);
     const [time, setTime] = useState([]);
 
-
     useEffect(
         () => {
-
             const { id } = props.match.params;
             console.log(id)
             axios.get(`http://localhost:3003/globalhitss/formsTime/${id}`)
@@ -24,13 +22,10 @@ export default function FormulariosPorTime(props) {
         }, [props.match.params]
     );
 
-
     return (
         <>
-
-            <h3>Formularios de {time.nome}</h3>
-            <Link to={`/inserirFormulario/${time.id}`}>Adicionar</Link>
-            
+            <h3>Formulários de {time.nome}</h3>
+            <Link to={`/inserirFormulario/${time.id}`}>Adicionar</Link>            
 
             <div className=" d-flex">
                 {
@@ -42,13 +37,11 @@ export default function FormulariosPorTime(props) {
                                         <div className="text" >
                                             <h5 className="tipoform"><strong>Formulário para</strong></h5>
                                             <h5 className="tipoform"><strong>{formulario.tipo}</strong></h5>
-                                            <div className="formBotoes">
-                                              
+                                            <div className="formBotoes">                                                
                                                 <p className="liteste mb-3"><Link to={`/inserirPergunta/${formulario.id}`} >Cadastrar Pergunta</Link></p>
                                                 <p className="liteste mb-3"><Link to={`/perguntasFormulario/${formulario.id}`}>Ver Perguntas</Link></p>
                                                 <p className="liteste mb-3"><Link to={`/editarFormulario/${formulario.id}`}>Editar</Link></p>
                                                 <p className="liteste mb-3"><Link to={`/excluirFormulario/${formulario.id}`}>Excluir</Link></p>
-                                              
                                             </div>
                                         </div>
                                     </div>
@@ -60,40 +53,7 @@ export default function FormulariosPorTime(props) {
                         </tr>
                     )
                 }
-
             </div>
-
-
-            {/* 
-            <table className="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Tipo</th>
-                        <th>Mais Informações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        formularios.length > 0 ? (
-                            formularios.map(
-                                (formulario, index) => (
-                                    <tr key={index}>
-                                        <td>{formulario.idTime}</td>
-                                        <td>{formulario.tipo}</td>
-                                        <td><Link to={`/detalhesFormulario/${formulario.id}`}>Detalhes</Link></td>
-                                    </tr>
-                                )
-                            )
-                        ) : (
-                            <tr>
-                                <td colSpan='3'>Nenhum usuário registrado</td>
-                            </tr>
-                        )
-                    }
-                </tbody>
-            </table> */}
-
             <p><Link to={`/detalhesTime/${formularios.id}`}>Voltar</Link></p>
 
         </>

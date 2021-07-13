@@ -17,11 +17,6 @@ export default function DashboardGestor() {
 
     const [countTimes, setCountTimes] = useState(0)
 
-    
-    
-    
-    
-
     useEffect( () => {
         async function getCountUsers() {
             const {data} = await axios.get('http://localhost:3003/globalhitss/contagemUsuarios')
@@ -71,7 +66,7 @@ export default function DashboardGestor() {
                     <div className="dashTres col-md-4 pt-4 text-center rounded shadow">
                         <FaUserTie size={70} />
                         <p className="pt-3 small mb-0">Bem vindo</p>
-                        <p className=" ">Nome do Administrador </p>
+                        <p className=" ">Kaique Ryan</p>
                     </div>
 
                     <Link to='/times' className="dashTres col-md-4 py-4 rounded shadow">
@@ -95,7 +90,7 @@ export default function DashboardGestor() {
                         </Link>
                 </div>
 
-                <div className="dashLinha row mt-3 p-3 justify-content-between rounded shadow">
+                <div className="dashLinha row mt-3 p-3 justify-content-between rounded shadow-lg">
                     <div className="">
                         <h5 className="mt-4 mb-0"><AiOutlineForm /> Cadastro de Usuários Recentes</h5> 
                         <br />
@@ -103,9 +98,9 @@ export default function DashboardGestor() {
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Login</th>
+                        {/* <th>Login</th> */}
                         <th>Tipo</th>
-                        <th>Time</th>
+                        {/* <th>Time</th> */}
                         <th>Criado</th>
                         <th>Detalhes</th>
                     </tr>
@@ -118,11 +113,11 @@ export default function DashboardGestor() {
                             (
                                 <tr key={key}>
                                     <td>{usuario.nome}</td>
-                                    <td>{usuario.login}</td>
+                                    {/* <td>{usuario.login}</td> */}
                                     <td>{usuario.tipo}</td>
-                                    <td><Link to={`/detalhesTime/${usuario.idTime}`}>Ver</Link></td>
+                                    {/* <td><Link to={`/detalhesTime/${usuario.idTime}`}>Ver</Link></td> */}
                                     <td>{moment(usuario.createdAt).format('DD/MM/YYYY')}</td>
-                                    <td><Link to={`/detalhesUsuario/${usuario.id}`}>Detalhes</Link></td>
+                                    <td><Link to={`/detalhesUsuario/${usuario.id}`}>Ver</Link></td>
                                     
                                 </tr>
                             )
