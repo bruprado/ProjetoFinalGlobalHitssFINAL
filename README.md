@@ -4,6 +4,6 @@ na pasta frontend: \
 npm install \
 npm start 
 
-na posta backend: \
+na pasta backend: \
 npm install \
 node index.js 
