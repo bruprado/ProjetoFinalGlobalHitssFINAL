@@ -1,9 +1,9 @@
 # globalHitssProjetoFinalFINAL
  
 na pasta frontend:
-npm install
-npm start
+npm install \
+npm start \
 
-na posta backend:
-npm install
-node index.js
+na posta backend: \
+npm install \
+node index.js \
